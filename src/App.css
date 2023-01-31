@@ -1,4 +1,4 @@
-.App {
+.Todos {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -6,7 +6,7 @@
   background-color: #d3d3d3;
 }
 
-.container {
+.todo-box {
   display: flex;
   height: 80vh;
   border: 1px solid gray;
@@ -19,7 +19,7 @@
   background-color: #282c34;
 }
 
-h1{
+h1 {
   font-size: 24px;
 }
 
@@ -60,6 +60,6 @@ button {
   align-items: center;
 }
 
-.todo-text{
+.todo-text {
   flex: 1;
 }
