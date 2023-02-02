@@ -1,32 +1,51 @@
-import React, {useState} from 'react';
-import './App.css';
-import TodoList from './components/TodoList';
+import React, { useState } from "react";
+import "./App.css";
 
-function App() {
-  const [todos, setTodos] = useState('')
-  const [todoList, setTodoList] = useState([])
-  const addTodos = (todoEvent) => {
-    setTodos(todoEvent.target.value)
-    todoEvent()
-  }
-  const addItem = (addEvent) => {
-    console.log("I have to do is", todos)
-    setTodoList([...todoList, todos])
-    addEvent()
-  }
-    
+const App = () => {
+  const [todo, setTodo] = useState("");
+  const [todos, setTodos] = useState([]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (todo !== "") {
+      setTodos([{ id: `${todo}-${Date.now()}`, todo }, ...todos]);
+      setTodo("");
+    }
+  };
+
+  const handleDelete = (id) => {
+    const delTodo = todos.filter((to) => to.id !== id);
+    setTodos([...delTodo]);
+  };
+
   return (
-    <div className="Todos">
-      <div className="todo-box ">
-        <h1>David Todo List</h1>
-        <div className="todo-form">
-          <input type="text" value ={todos} onChange={addTodos}/>
-          <button onClick={addItem}>추가</button>
-        </div>
-        <TodoList todoList={todoList}/>
+    <div className="todoApp">
+      <div className="container">
+        <h1>DW Todo List App</h1>
+        <form className="todoForm" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={todo}
+            onChange={(e) => setTodo(e.target.value)}
+          />
+          <button>Go</button>
+        </form>
+
+        <ul className="todoList">
+          {todos.map((t) => (
+            <li className="todoItem">
+              <span className="todoText" key={t.id}>
+                {t.todo}
+              </span>
+              <button>Edit</button>
+              <button onClick={() => handleDelete(t.id)}>Delete</button>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
-}
+};
 
 export default App;
