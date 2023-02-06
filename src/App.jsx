@@ -1,10 +1,12 @@
 import { useState } from "react";
-import "./Todo.css";
+import "./App.css";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
 
-const Todo = () => {
+const App = () => {
   const [inputValue, setInputValue] = useState("");
   const [todoList, setTodoList] = useState([]);
-  const [editId, seteditId] = useState(0);
+  const [editId, setEditId] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ const Todo = () => {
           : { id: todoItem.id, inputValue: todoItem.inputValue }
       );
       setTodoList(updatedTodo);
-      seteditId(0);
+      setEditId(0);
       setInputValue("");
       return;
     }
@@ -39,38 +41,27 @@ const Todo = () => {
   const handleEdit = (id) => {
     const editTodo = todoList.find((todoItem) => todoItem.id === id);
     setInputValue(editTodo.inputValue);
-    seteditId(id);
+    setEditId(id);
   };
 
   return (
     <div className="todoApp">
       <div className="todoBoard">
         <h1>DW Todo List</h1>
-        <form className="todoForm" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-          />
-          <button> {editId ? "Edit" : "GO"} </button>
-        </form>
-        <ul className="todoList">
-          {todoList.map((todoItem) => (
-            <li className="todoItem">
-              <span
-                className="todoText"
-                key={`${inputValue}-${Date.now()}-${todoItem.id}`}
-              >
-                {todoItem.inputValue}
-              </span>
-              <button onClick={() => handleEdit(todoItem.id)}>Edit</button>
-              <button onClick={() => handleDelete(todoItem.id)}>Delete</button>
-            </li>
-          ))}
-        </ul>
+        <TodoForm
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          handleSubmit={handleSubmit}
+          editId={editId}
+        />
+        <TodoList
+          todoList={todoList}
+          handleDelete={handleDelete}
+          handleEdit={handleEdit}
+        />
       </div>
     </div>
   );
 };
 
-export default Todo;
+export default App;
