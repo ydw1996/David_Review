@@ -2,27 +2,16 @@ import { useState } from "react";
 import "./App.css";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+import TodoEdit from "./components/TodoEdit";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");
   const [todoList, setTodoList] = useState([]);
-  const [editId, setEditId] = useState(0);
+  const [editPopup, setEditPopup] = useState(false);
+  const [editTodo, setEditTodo] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (editId) {
-      const editTodo = todoList.find((todoItem) => todoItem.id === editId);
-      const updatedTodo = todoList.map((todoItem) =>
-        todoItem.id === editTodo.id
-          ? (todoItem = { id: todoItem.id, inputValue })
-          : { id: todoItem.id, inputValue: todoItem.inputValue }
-      );
-      setTodoList(updatedTodo);
-      setEditId(0);
-      setInputValue("");
-      return;
-    }
 
     if (inputValue !== "") {
       setTodoList([
@@ -38,10 +27,12 @@ const App = () => {
     setTodoList([...delTodo]);
   };
 
-  const handleEdit = (id) => {
-    const editTodo = todoList.find((todoItem) => todoItem.id === id);
-    setInputValue(editTodo.inputValue);
-    setEditId(id);
+  const onEditPopup = () => {
+    setEditPopup((prev) => !prev);
+  };
+
+  const onChangeEditTodo = (id) => {
+    setEditTodo(id);
   };
 
   return (
@@ -52,13 +43,17 @@ const App = () => {
           inputValue={inputValue}
           setInputValue={setInputValue}
           handleSubmit={handleSubmit}
-          editId={editId}
         />
         <TodoList
           todoList={todoList}
           handleDelete={handleDelete}
-          handleEdit={handleEdit}
+          editPopup={editPopup}
+          onEditPopup={onEditPopup}
+          onChangeEditTodo={onChangeEditTodo}
         />
+        {editPopup && (
+          <TodoEdit todoList={todoList} onEditPopup={onEditPopup} />
+        )}
       </div>
     </div>
   );
