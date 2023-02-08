@@ -8,6 +8,7 @@ const App = () => {
   const [inputValue, setInputValue] = useState("");
   const [todoList, setTodoList] = useState([]);
   const [editPopup, setEditPopup] = useState(false);
+  const [editTodo, setEditTodo] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
