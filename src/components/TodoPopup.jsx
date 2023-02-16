@@ -3,16 +3,16 @@ import { MdAddCircle } from "react-icons/md";
 import "./TodoPopup.css";
 
 const TodoPopup = ({ onAddPopup, onAddTodo }) => {
-  const [addValue, setaddValue] = useState("");
+  const [addValue, setAddValue] = useState("");
 
   const onChange = (e) => {
-    setaddValue(e.target.value);
+    setAddValue(e.target.value);
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
     onAddTodo(addValue);
-    setaddValue("");
+    setAddValue("");
     onAddPopup();
   };
 
@@ -20,7 +20,7 @@ const TodoPopup = ({ onAddPopup, onAddTodo }) => {
     <div>
       <div className="todoPopup_bg" onClick={onAddPopup}></div>
       <form onSubmit={onSubmit}>
-        <input value={addValue} onChange={onChange}></input>
+        <input placeholder="please type" value={addValue} onChange={onChange}></input>
         <button type="submit">
           <MdAddCircle />
         </button>

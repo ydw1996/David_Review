@@ -3,18 +3,18 @@
   z-index: 980;
   top: 0;
   left: 0;
-  overflow: hidden;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(6, 40, 102, 0.681);
-  opacity: 0.8;
+  background: -webkit-linear-gradient(90deg, rgb(211, 234, 255), rgb(144, 199, 255));
+  background: linear-gradient(90deg, rgb(211, 234, 255), rgb(144, 199, 255));
+  opacity: 0.7;
 }
 
 form {
-  margin-left: 2%;
+  margin-left: 1.2%;
   position: fixed;
   top: 35%;
   display: flex;
@@ -25,10 +25,9 @@ form {
   width: 400px;
   height: 200px;
   border-radius: 20px;
-  border: 1px solid #0d4985;
-  box-shadow: 1px 2px 5px 1px #0d4985;
+  border: 1px solid #505050;
 
-  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 form > input {
@@ -47,7 +46,7 @@ form > button {
   background: none;
   outline: none;
   border: none;
-  color: #0d4985;
+  color: rgb(76, 160, 255);
   padding-left: 1rem;
   padding-right: 1rem;
   font-size: 2.5rem;

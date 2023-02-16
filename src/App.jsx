@@ -12,7 +12,7 @@ const App = () => {
   const [inputValue, setInputValue] = useState([
     {
       id: 1,
-      text: "Todo 1",
+      text: "Todo 1", 
       checked: true,
     },
     {
@@ -55,8 +55,7 @@ const App = () => {
 
   return (
     <div className="todoApp">
-      <TodoBoard todoLength={inputValue.length}>
-        <TodoList inputValue={inputValue} onCheckTodo={onCheckTodo} />
+      <TodoBoard todoLength={inputValue.length}>        <TodoList inputValue={inputValue} onCheckTodo={onCheckTodo} />
         <div className="todoAdd" onClick={onAddPopup}>
           <BsFillPlusCircleFill />
         </div>

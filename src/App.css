@@ -1,10 +1,19 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+
 .todoApp {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: rgb(57, 57, 57);
-  background-color: antiquewhite;
+  background: -webkit-linear-gradient(90deg, rgb(211, 234, 255), rgb(144, 199, 255));
+  background: linear-gradient(90deg, rgb(211, 234, 255), rgb(144, 199, 255));
+
 }
 
 .todoAdd {
@@ -17,5 +26,5 @@
   height: 60px;
   cursor: pointer;
   font-size: 5rem;
-  color: aquamarine;
+  color: rgb(76, 160, 255);
 }
