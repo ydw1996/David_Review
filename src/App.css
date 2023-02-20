@@ -1,62 +1,30 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+
 .todoApp {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: rgb(57, 57, 57);
-  background-color: antiquewhite;
+  background: -webkit-linear-gradient(90deg, rgb(211, 234, 255), rgb(144, 199, 255));
+  background: linear-gradient(90deg, rgb(211, 234, 255), rgb(144, 199, 255));
+
 }
 
-.todoBoard {
+.todoAdd {
+  position: absolute;
+  right: 30px;
+  bottom: 40px;
   display: flex;
-  height: 80vh;
-  border: 1px solid grey;
-  padding: 20px;
-  flex-direction: column;
-  align-items: center;
-  font-size: 20px;
-  color: white;
-  background-color: #282c34;
-  border-radius: 20px;
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-}
-
-.todoForm {
-  display: flex;
-  justify-content: space-around;
-  width: 450px;
-}
-
-input {
-  width: 80%;
-  padding: 10px;
-  border-radius: 20px;
-  border: none;
-}
-
-button {
-  border: none;
-  padding: 10px;
-  border-radius: 20px;
-  margin: 0 5px;
-}
-
-.todoList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.todoItem {
-  border-radius: 50px;
-  margin: 20px 0;
-  background-color: #5dadf8;
-  padding: 10px 20px;
-  display: flex;
-  width: 400px;
-  align-items: center;
-}
-
-.todoText {
-  flex: 1;
+  z-index: 100;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  font-size: 5rem;
+  color: rgb(76, 160, 255);
 }

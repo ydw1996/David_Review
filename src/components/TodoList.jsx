@@ -1,24 +1,14 @@
-function TodoList({ todoList, handleDelete, onEditPopup, onChangeEditTodo }) {
+import TodoItem from "./TodoItem";
+import "./TodoList.css";
+
+const TodoList = ({ inputValue, onCheckTodo }) => {
   return (
-    <ul className="todoList">
-      {todoList.map(({ id, inputValue }) => (
-        <li className="todoItem">
-          <span className="todoText" key={`${id}-${id}`}>
-            {inputValue}
-          </span>
-          <button
-            onClick={() => {
-              onEditPopup(id);
-              onChangeEditTodo(id);
-            }}
-          >
-            Edit
-          </button>
-          <button onClick={() => handleDelete(id)}>Delete</button>
-        </li>
+    <div className="todoList">
+      {inputValue.map((todo) => (
+        <TodoItem todo={todo} key={todo.id} onCheckTodo={onCheckTodo} />
       ))}
-    </ul>
+    </div>
   );
-}
+};
 
 export default TodoList;
