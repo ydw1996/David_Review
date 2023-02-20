@@ -2,9 +2,8 @@
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-
   border-radius: 20px;
-  border: 1px solid #5d5d5d;
+  border: 1px solid rgba(76, 160, 255, 0.255);
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -23,7 +22,7 @@
 
 .content svg {
   font-size: 1.5rem;
-  color: rgb(126, 126, 126);
+  color: #a1a1a16a;
 }
 
 .content.checked svg {

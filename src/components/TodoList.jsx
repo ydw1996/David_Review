@@ -1,11 +1,22 @@
 import TodoItem from "./TodoItem";
 import "./TodoList.css";
 
-const TodoList = ({ inputValue, onCheckTodo }) => {
+const TodoList = ({
+  todoValue,
+  onCheckTodo,
+  onInsertPopup,
+  onChangeSeclectedTodo,
+}) => {
   return (
     <div className="todoList">
-      {inputValue.map((todo) => (
-        <TodoItem todo={todo} key={todo.id} onCheckTodo={onCheckTodo} />
+      {todoValue.map((todo) => (
+        <TodoItem
+          todo={todo}
+          key={todo.id}
+          onCheckTodo={onCheckTodo}
+          onInsertPopup={onInsertPopup}
+          onChangeSeclectedTodo={onChangeSeclectedTodo}
+        />
       ))}
     </div>
   );
