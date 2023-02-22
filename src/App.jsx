@@ -6,27 +6,38 @@ import TodoList from "./components/TodoList";
 import TodoPopup from "./components/TodoPopup";
 
 const App = () => {
+  let [btnActive, setBtnActive] = useState("");
   const [selectedTodo, setSecletedTodo] = useState(null);
   const [addPopup, setAddPopup] = useState(false);
   const [todoValue, setTodoValue] = useState([
     {
       id: 1,
-      text: "용현씨와 헬스하기 💪",
+      text: "Todo리스트 날짜, 요일 적용 💪",
       checked: true,
     },
     {
       id: 2,
-      text: "혜린씨의 철학듣기 📓",
+      text: "레이아웃 정리, 폰트적용 📓",
       checked: true,
     },
     {
       id: 3,
-      text: "소정씨와 마늘먹기 🧄",
-      checked: true,
+      text: "리스트 hover 편집,삭제 Icon노출 🎯",
+      checked: false,
     },
     {
       id: 4,
-      text: "천규씨에게 Fact폭받기 🥊",
+      text: "달력 기능 넣어 페이지 추가 🔨",
+      checked: false,
+    },
+    {
+      id: 5,
+      text: "설정 추가 > Todo리스트 커스텀 🎨",
+      checked: false,
+    },
+    {
+      id: 6,
+      text: "React활용하여 새로운 기능 추가 🎉",
       checked: false,
     },
   ]);
@@ -38,7 +49,7 @@ const App = () => {
     setAddPopup((prev) => !prev);
   };
 
-  const nextId = useRef(5);
+  const nextId = useRef(7);
   const onInsertTodo = useCallback(
     (text) => {
       if (text === "") {
@@ -81,7 +92,7 @@ const App = () => {
 
   return (
     <div className="todoApp">
-      <TodoBoard todoLength={todoValue.length}>
+      <TodoBoard todoValue={todoValue}>
         {" "}
         <TodoList
           todoValue={todoValue}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { MdAddCircle } from "react-icons/md";
 import { TiPencil, TiTrash } from "react-icons/ti";
-import "./TodoPopup.css";
+import "./style/TodoPopup.css";
 
 const TodoPopup = ({
   onInsertPopup,
@@ -45,7 +45,7 @@ const TodoPopup = ({
           placeholder="할일을 써주세요 :)"
           value={addValue}
           onChange={onChange}
-        ></input>
+        />
         {selectedTodo ? (
           <div className="todoSelect">
             <TiPencil

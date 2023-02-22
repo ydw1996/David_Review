@@ -1,5 +1,5 @@
 import { BsCheckCircle, BsCircle } from "react-icons/bs";
-import "./TodoItem.css";
+import "./style/TodoItem.css";
 
 const TodoItem = ({
   todo,
