@@ -1,7 +1,7 @@
 .todoList {
-  width: 100%;
+  margin-left: 20px;
+  width: 50%;
   height: 50vh;
-  padding-bottom: 20px;
   color: rgb(76, 76, 76);
   overflow-y: scroll;
 }

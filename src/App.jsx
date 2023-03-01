@@ -1,12 +1,15 @@
 import { useState, useRef, useCallback } from "react";
 import { BsFillPlusCircleFill } from "react-icons/bs";
+import Calendar from "react-calendar";
 import "./App.css";
+import "react-calendar/dist/Calendar.css";
+import "./components/style/Calendar.css";
 import TodoBoard from "./components/TodoBoard";
 import TodoList from "./components/TodoList";
 import TodoPopup from "./components/TodoPopup";
 
 const App = () => {
-  let [btnActive, setBtnActive] = useState("");
+  const [date, setDate] = useState(new Date());
   const [selectedTodo, setSecletedTodo] = useState(null);
   const [addPopup, setAddPopup] = useState(false);
   const [todoValue, setTodoValue] = useState([
@@ -22,12 +25,12 @@ const App = () => {
     },
     {
       id: 3,
-      text: "리스트 hover 편집,삭제 Icon노출 🎯",
-      checked: false,
+      text: "달력 기능 넣어 페이지 추가 🔨",
+      checked: true,
     },
     {
       id: 4,
-      text: "달력 기능 넣어 페이지 추가 🔨",
+      text: "리스트 hover 편집,삭제 Icon노출 🎯",
       checked: false,
     },
     {
@@ -93,7 +96,7 @@ const App = () => {
   return (
     <div className="todoApp">
       <TodoBoard todoValue={todoValue}>
-        {" "}
+        <Calendar onChange={setDate} value={date} />{" "}
         <TodoList
           todoValue={todoValue}
           onCheckTodo={onCheckTodo}

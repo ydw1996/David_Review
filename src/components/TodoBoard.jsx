@@ -16,7 +16,7 @@ const TodoBoard = ({ children }) => {
       <h1>{dateString}</h1>
       <div className="day">{dayName}</div>
       <hr />
-      <div>{children}</div>
+      <div className="todoBoard_container">{children}</div>
     </div>
   );
 };

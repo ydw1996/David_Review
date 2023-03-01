@@ -1,8 +1,7 @@
 .todoBoard {
   position: relative;
   display: flex;
-  height: 80vh;
-  width: 420px;
+  width: 800px;
   border: 1px solid #fff;
   padding: 30px;
   flex-direction: column;
@@ -30,4 +29,9 @@ hr {
 }
 .sub_title {
   padding-bottom: 20px;
+}
+
+.todoBoard_container {
+  display: flex;
+  padding-bottom: 80px;
 }
