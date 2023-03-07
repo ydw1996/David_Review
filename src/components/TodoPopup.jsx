@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { MdAddCircle } from "react-icons/md";
 import { TiPencil, TiTrash } from "react-icons/ti";
-import "./style/TodoPopup.css";
+import "../assets/style/TodoPopup.css";
 
 const TodoPopup = ({
   onInsertPopup,

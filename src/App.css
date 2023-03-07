@@ -13,11 +13,32 @@ body {
   align-items: center;
   color: rgb(57, 57, 57);
   background: -webkit-linear-gradient(
-    90deg,
-    rgb(211, 234, 255),
-    rgb(144, 199, 255)
+    180deg,
+    rgb(246, 251, 255),
+    rgb(214, 235, 255)
   );
-  background: linear-gradient(90deg, rgb(211, 234, 255), rgb(144, 199, 255));
+}
+
+.bg_blue {
+  background: -webkit-linear-gradient(
+  360deg,
+  rgb(211, 234, 255),
+  rgb(144, 199, 255)
+);
+}
+.bg_black {
+  background: -webkit-linear-gradient(
+  360deg,
+  rgb(57, 57, 57),
+  rgb(0, 0, 0)
+);
+}
+.bg_white {
+  background: -webkit-linear-gradient(
+  360deg,
+  rgb(246, 251, 255),
+  rgb(240, 248, 255)
+);
 }
 
 .todoAdd {

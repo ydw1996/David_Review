@@ -1,5 +1,5 @@
 import TodoItem from "./TodoItem";
-import "./style/TodoList.css";
+import "../assets/style/TodoList.css";
 
 const TodoList = ({
   todoValue,

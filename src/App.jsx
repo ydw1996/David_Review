@@ -2,7 +2,7 @@ import { useState, useRef, useCallback } from "react";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import "./App.css";
 import "react-calendar/dist/Calendar.css";
-import "./components/style/Calendar.css";
+import "./assets/style/Calendar.css";
 import TodoBoard from "./components/TodoBoard";
 import TodoList from "./components/TodoList";
 import TodoPopup from "./components/TodoPopup";
@@ -10,6 +10,7 @@ import TodoPopup from "./components/TodoPopup";
 const App = () => {
   const [selectedTodo, setSecletedTodo] = useState(null);
   const [addPopup, setAddPopup] = useState(false);
+  const [selectedClassName, setSelectedClassName] = useState('');
   const [todoValue, setTodoValue] = useState([
     {
       id: 1,
@@ -89,11 +90,16 @@ const App = () => {
     setTodoValue((todoValue) =>
       todoValue.map((todo) => (todo.id === id ? { ...todo, text } : todo))
     );
+  };  
+  const handleChangeSkin = (className) => {
+    setSelectedClassName(className);
   };
-
+  
   return (
-    <div className="todoApp">
-      <TodoBoard todoValue={(todoValue, useState)}>
+    <div className={`todoApp ${selectedClassName}`}>
+      <TodoBoard 
+      todoValue={(todoValue)}
+      handleChangeSkin={handleChangeSkin}>
         <TodoList
           todoValue={todoValue}
           onCheckTodo={onCheckTodo}
