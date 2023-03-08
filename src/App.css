@@ -3,6 +3,7 @@ html {
 }
 body {
   height: 100%;
+  margin: 0;
 }
 
 .todoApp {
@@ -11,9 +12,33 @@ body {
   justify-content: center;
   align-items: center;
   color: rgb(57, 57, 57);
-  background: -webkit-linear-gradient(90deg, rgb(211, 234, 255), rgb(144, 199, 255));
-  background: linear-gradient(90deg, rgb(211, 234, 255), rgb(144, 199, 255));
+  background: -webkit-linear-gradient(
+    180deg,
+    rgb(246, 251, 255),
+    rgb(240, 248, 255)
+  );
+}
 
+.bg_blue {
+  background: -webkit-linear-gradient(
+  360deg,
+  rgb(211, 234, 255),
+  rgb(144, 199, 255)
+);
+}
+.bg_black {
+  background: -webkit-linear-gradient(
+  360deg,
+  rgb(166, 166, 166),
+  rgb(55, 55, 55)
+);
+}
+.bg_white {
+  background: -webkit-linear-gradient(
+  360deg,
+  rgb(246, 251, 255),
+  rgb(240, 248, 255)
+);
 }
 
 .todoAdd {
@@ -27,4 +52,24 @@ body {
   cursor: pointer;
   font-size: 5rem;
   color: rgb(76, 160, 255);
+  animation: bounce_frames 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-iteration-count: infinite;
+}
+
+.todoAdd:hover {
+  color: rgba(76, 160, 255, 0.773);
+  top: 10;
+  transition: 0.5s ease-in-out;
+}
+
+@keyframes bounce_frames {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 5px, 0);
+  }
 }

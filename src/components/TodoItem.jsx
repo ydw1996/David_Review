@@ -1,7 +1,12 @@
 import { BsCheckCircle, BsCircle } from "react-icons/bs";
-import "./TodoItem.css";
+import "../assets/style/TodoItem.css";
 
-const TodoItem = ({ todo, onCheckTodo }) => {
+const TodoItem = ({
+  todo,
+  onCheckTodo,
+  onInsertPopup,
+  onChangeSeclectedTodo,
+}) => {
   const { id, text, checked } = todo;
   return (
     <div className="todoItem">
@@ -19,7 +24,15 @@ const TodoItem = ({ todo, onCheckTodo }) => {
             }}
           />
         )}
-        <div className="text">{text}</div>
+        <div
+          className="text"
+          onClick={() => {
+            onChangeSeclectedTodo(todo);
+            onInsertPopup();
+          }}
+        >
+          {text}
+        </div>
       </div>
     </div>
   );
