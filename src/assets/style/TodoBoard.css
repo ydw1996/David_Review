@@ -15,6 +15,37 @@
 }
 .todoBoard_header {
   display: flex;
+  justify-content: space-between;
+}
+
+.todo_setting {
+  display: flex;
+  justify-content: space-between;
+}
+.todo_setting > button {
+  outline: none;
+  cursor: pointer;
+}
+.todo_skinBtn {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  margin-left: 0.8rem;
+  border: none;
+}
+
+.skin_Bu {
+  background: rgba(76, 160, 255, 0.54);
+}
+
+.skin_Bk {
+  background: #afafaf;
+  border: 0.5px solid #9c9c9c;
+}
+
+.skin_Wh {
+  background: #ffffff;
+  border: 0.5px solid #d1d1d1;
 }
 
 h1 {
@@ -26,7 +57,6 @@ h1 {
   margin-top: 10px;
   font-size: 1.2rem;
 }
-
 
 hr {
   margin-top: 30px;

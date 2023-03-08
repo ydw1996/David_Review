@@ -15,7 +15,7 @@ body {
   background: -webkit-linear-gradient(
     180deg,
     rgb(246, 251, 255),
-    rgb(214, 235, 255)
+    rgb(240, 248, 255)
   );
 }
 
@@ -29,8 +29,8 @@ body {
 .bg_black {
   background: -webkit-linear-gradient(
   360deg,
-  rgb(57, 57, 57),
-  rgb(0, 0, 0)
+  rgb(166, 166, 166),
+  rgb(55, 55, 55)
 );
 }
 .bg_white {

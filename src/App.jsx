@@ -1,16 +1,13 @@
 import { useState, useRef, useCallback } from "react";
-import { BsFillPlusCircleFill } from "react-icons/bs";
 import "./App.css";
-import "react-calendar/dist/Calendar.css";
-import "./assets/style/Calendar.css";
 import TodoBoard from "./components/TodoBoard";
 import TodoList from "./components/TodoList";
+import TodoCreate from "./components/TodoCreate";
 import TodoPopup from "./components/TodoPopup";
 
 const App = () => {
   const [selectedTodo, setSecletedTodo] = useState(null);
   const [addPopup, setAddPopup] = useState(false);
-  const [selectedClassName, setSelectedClassName] = useState('');
   const [todoValue, setTodoValue] = useState([
     {
       id: 1,
@@ -19,28 +16,13 @@ const App = () => {
     },
     {
       id: 2,
-      text: "레이아웃 정리, 폰트적용 📓",
+      text: "컴포넌트 정리, 변수 정리 📓",
       checked: true,
     },
     {
       id: 3,
-      text: "달력 기능 넣어 페이지 추가 🔨",
+      text: "캘린더 날짜 별, localstorge 적용 🔨",
       checked: true,
-    },
-    {
-      id: 4,
-      text: "리스트 hover 편집,삭제 Icon노출 🎯",
-      checked: false,
-    },
-    {
-      id: 5,
-      text: "설정 추가 > Todo리스트 커스텀 🎨",
-      checked: false,
-    },
-    {
-      id: 6,
-      text: "React활용하여 새로운 기능 추가 🎉",
-      checked: false,
     },
   ]);
 
@@ -90,11 +72,13 @@ const App = () => {
     setTodoValue((todoValue) =>
       todoValue.map((todo) => (todo.id === id ? { ...todo, text } : todo))
     );
-  };  
+  };
+
+  const [selectedClassName, setSelectedClassName] = useState('');
   const handleChangeSkin = (className) => {
     setSelectedClassName(className);
   };
-  
+
   return (
     <div className={`todoApp ${selectedClassName}`}>
       <TodoBoard 
@@ -106,9 +90,7 @@ const App = () => {
           onInsertPopup={onInsertPopup}
           onChangeSeclectedTodo={onChangeSeclectedTodo}
         />
-        <div className="todoAdd" onClick={onInsertPopup}>
-          <BsFillPlusCircleFill />
-        </div>
+        <TodoCreate onInsertPopup={onInsertPopup}/>
         {addPopup && (
           <TodoPopup
             selectedTodo={selectedTodo}

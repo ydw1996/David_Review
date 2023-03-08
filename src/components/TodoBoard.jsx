@@ -1,12 +1,14 @@
-import "../assets/style/TodoBoard.css";
 import { useState } from "react";
 import Calendar from "react-calendar";
 import moment from "moment";
+import "react-calendar/dist/Calendar.css";
+import "../assets/style/Calendar.css";
+import "../assets/style/TodoBoard.css";
 
 const TodoBoard = ({ children, handleChangeSkin }) => {
   const [date, setDate] = useState(new Date());
   const dayName = date.toLocaleString("ko-KR", { weekday: "long" });
-
+  
   return (
     <div className="todoBoard">
       <div className="todoBoard_header">
@@ -15,9 +17,9 @@ const TodoBoard = ({ children, handleChangeSkin }) => {
           <div className="day">{dayName}</div>
         </div>
         <div className="todo_setting">
-          <button onClick={() => handleChangeSkin('bg_blue')}>Button 1</button>
-          <button onClick={() => handleChangeSkin('bg_black')}>Button 2</button>
-          <button onClick={() => handleChangeSkin('bg_white')}>Button 3</button>
+          <button className="todo_skinBtn skin_Bu" onClick={() => handleChangeSkin('bg_blue')}></button>
+          <button className="todo_skinBtn skin_Bk" onClick={() => handleChangeSkin('bg_black')}></button>
+          <button className="todo_skinBtn skin_Wh" onClick={() => handleChangeSkin('bg_white')}></button>
         </div>
       </div>
       <hr />
