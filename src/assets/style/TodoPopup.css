@@ -8,15 +8,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: -webkit-linear-gradient(90deg, rgb(211, 234, 255), rgb(144, 199, 255));
+  background: -webkit-linear-gradient(
+    90deg,
+    rgb(211, 234, 255),
+    rgb(144, 199, 255)
+  );
   background: linear-gradient(90deg, rgb(211, 234, 255), rgb(144, 199, 255));
   opacity: 0.7;
 }
 
 form {
-  margin-left: 1.2%;
   position: fixed;
-  top: 35%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,19 +29,17 @@ form {
   z-index: 990;
   width: 400px;
   height: 200px;
-  border-radius: 20px;
-  border: 1px solid #505050;
-
-  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  background: #fff;
 }
 
 form > input {
+  width: 60%;
   background: none;
   outline: none;
   border: none;
-  border-bottom: 1px solid #0d4985;
-
-  padding: 0.5rem;
+  border-bottom: 1px solid rgba(76, 160, 255, 0.255);
+  padding: 0.8rem;
   font-size: 1.125rem;
   line-height: 1.5;
 }
@@ -53,5 +56,22 @@ form > button {
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: 0.3s background ease-in;
+}
+
+form > button:hover {
+  transition: 0.3s ease-in;
+  color: rgba(76, 160, 255, 0.773);
+}
+
+.todoSelect > svg {
+  padding-top: 20px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.todoSelect > svg:hover {
+  transition: 0.3s ease-in;
+  color: rgba(76, 160, 255, 0.773);
 }

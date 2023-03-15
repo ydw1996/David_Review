@@ -1,13 +1,26 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-googleNanum-R);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@font-face {
+  font-family: "googleNanumGothic-R";
+  src: url(./assets/fonts/NanumGothic-Regular.ttf);
+}
+@font-face {
+  font-family: "googleNanumGothic-B";
+  src: url(./assets/fonts/NanumGothic-Bold.ttf);
+}
+@font-face {
+  font-family: "googleNanumGothic-EB";
+  src: url(./assets/fonts/NanumGothic-ExtraBold.ttf);
+}
+:root {
+  --font-googleNanum-R: "googleNanumGothic-R";
+  --font-googleNanum-B: "googleNanumGothic-B";
+  --font-googleNanum-EB: "googleNanumGothic-EB";
 }

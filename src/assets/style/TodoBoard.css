@@ -1,0 +1,140 @@
+.todoBoard {
+  position: relative;
+  display: flex;
+  width: 800px;
+  border: 1px solid #fff;
+  padding: 30px;
+  flex-direction: column;
+  font-size: 1.2rem;
+  color: rgba(0, 81, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(px);
+  border-radius: 20px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.todoBoard_header {
+  display: flex;
+  justify-content: space-between;
+}
+.dropdown_btn {
+  margin-top: 0.2rem;
+  margin-right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.dropdown_btn svg {
+  font-size: 3rem;
+  color: rgb(76, 160, 255);
+}
+.dropdown_btn:hover {
+  opacity: 0.8;
+  transition-duration: 0.3s;
+}
+
+.dropdown_btn:active {
+  rotate: 45deg;
+  transition: 0.3s;
+}
+
+@keyframes slide-fade-in-dropdown-animation {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-fade-in-dropdown {
+  overflow: hidden;
+}
+
+.slide-fade-in-dropdown > ul {
+  animation: slide-fade-in-dropdown-animation .4s ease;
+}
+
+/* fade out */
+
+@keyframes slide-fade-out-dropdown-animation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.slide-fade-out-dropdown {
+  overflow: hidden;
+}
+
+.slide-fade-out-dropdown > ul {
+  animation: slide-fade-out-dropdown-animation 0.4s ease;
+  animation-fill-mode: forwards;
+}
+
+.todo_setting {
+  display: flex;
+  justify-content: space-between;
+}
+.todo_setting > button {
+  outline: none;
+  cursor: pointer;
+}
+.todo_setting ul {
+  padding-right: 0.8rem;
+}
+.todo_skinBtn {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  margin-left: 0.8rem;
+  border: none;
+  cursor: pointer;
+}
+.skin_Bu {
+  background: rgba(76, 160, 255, 0.54);
+}
+
+.skin_Bk {
+  background: #afafaf;
+  border: 0.5px solid #9c9c9c;
+}
+
+.skin_Wh {
+  background: #ffffff;
+  border: 0.5px solid #d1d1d1;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.day {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  width: 100%;
+  opacity: 0.4;
+}
+.sub_title {
+  padding-bottom: 20px;
+}
+
+.todoBoard_container {
+  display: flex;
+  padding-bottom: 80px;
+}
