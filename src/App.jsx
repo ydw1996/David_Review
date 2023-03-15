@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState} from "react";
 import "./App.css";
 import MainBoard from "./pages/MainBoard";
 
@@ -7,7 +7,7 @@ const App = () => {
   const handleChangeSkin = (className) => {
     setSelectedClassName(className);
   };
-
+  const [todoValue] = useState()
   return (
     <div className={`todoApp ${selectedClassName}`}>
       <MainBoard 
